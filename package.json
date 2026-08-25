@@ -1,0 +1,28 @@
+{
+  "name": "transit-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for the 511.org SF Bay Area transit API",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": { "transit-mcp-server": "dist/index.js" },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "inspect": "npx @modelcontextprotocol/inspector node dist/index.js",
+    "clean": "rm -rf dist",
+    "test": "node smoke-test.mjs",
+    "test:http": "node smoke-test-http.mjs"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
